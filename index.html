@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Můj webservřík</title>
+    <script>
+        function poNacteni() {
+            fetch("http://localhost:8080/appver").then(function(response) {
+                response.text().then(function(text) {
+                    let obj = JSON.parse(text);
+                    document.getElementById("app-ver").innerHTML =
+                        obj.name + " " + obj.version;
+                });
+            });
+        }
+    </script>
+</head>
+<body onload="poNacteni()">
+
+<h3>Můj webservřík</h3>
+<b id="app-ver">...</b>
+<br><br>
+
+test testík testíček
+<br>
+<img src="mimon.jpg" width="100">
+<br>
+<img src="mimon3.jpg" width="100">
+
+
+</body>
+</html>
