@@ -12,6 +12,13 @@
                         obj.name + " " + obj.version;
                 });
             });
+            fetch("http://localhost:8080/vtip").then(function(response) {
+                response.text().then(function(text) {
+                    let obj = JSON.parse(text);
+                    document.getElementById("vtipek").innerHTML =
+                        obj.nadpis + ": " + obj.text;
+                });
+            });
         }
     </script>
 </head>
@@ -19,6 +26,8 @@
 
 <h3>Můj webservřík</h3>
 <b id="app-ver">...</b>
+<br><br>
+<b id="vtipek">...</b>
 <br><br>
 
 test testík testíček
