@@ -19,6 +19,12 @@ function main(req, res) {
         obj.text = "blablabla...";
         res.writeHead(200, "Content-type: application/json");
         res.end(JSON.stringify(obj));
+    } else if (req.url == "/svatek") {
+        let obj = {};
+        obj.datum = "30.1.";
+        obj.svatek = "Robin";
+        res.writeHead(200, "Content-type: application/json");
+        res.end(JSON.stringify(obj));
     } else if (req.url.endsWith(".jpg")) { //konci na ".jpg"
         let fileName = req.url.substr(1); //zkopiruje od druheho znaku
         console.log("fileName:"+fileName);
