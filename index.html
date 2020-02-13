@@ -22,8 +22,9 @@
             fetch("http://localhost:8080/svatek").then(function(response) {
                 response.text().then(function(text) {
                     let obj = JSON.parse(text);
-                    document.getElementById("svatek").innerHTML =
-                        obj.svatek;
+                    document.getElementById("svatek").innerHTML = obj.svatek;
+                    document.getElementById("datum").innerHTML = obj.datum;
+                    document.getElementById("dow").innerHTML = obj.denvtydnu;
                 });
             });
         }
@@ -36,7 +37,7 @@
 <br><br>
 <b id="vtipek">...</b>
 <br><br>
-Svátek má <b id="svatek">...</b>
+Dnes je <b id="dow">...</b> <b id="datum">...</b> a svátek má <b id="svatek">...</b>
 <br><br>
 
 test testík testíček
